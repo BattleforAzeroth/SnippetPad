@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Optimize>true</Optimize>
+    <PublishSingleFile>true</PublishSingleFile>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <AssemblyTitle>SnippetPad</AssemblyTitle>
+    <RootNamespace>SnippetPad</RootNamespace>
+    <Version>0.1.0</Version>
+    <PackageVersion>0.1.0</PackageVersion>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
+    <!-- 如果想显示 v 前缀，放到 InformationalVersion，这个不参与 NuGet 校验 -->
+    <InformationalVersion>v0.1.0</InformationalVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  </ItemGroup>
+
+  <!-- 方案A：始终把 snippets.json 复制到输出和发布目录 -->
+  <ItemGroup>
+    <!-- 若 snippets.json 已在项目中作为“内容”项，使用 Update；否则可改为 Include -->
+	<Content Include="snippets.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
