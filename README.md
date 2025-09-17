@@ -1,6 +1,6 @@
 # SnippetPad（JSON 驱动，无热键）
 
-Windows 端 WinForms 小工具：根据 `snippets.json` 动态生成分组与按钮；点击按钮复制预设文本到剪贴板；支持“置顶”和手动刷新配置。
+Windows 端 WinForms 小工具：根据 `snippets.json` 动态生成分组与按钮；点击按钮复制预设文本到剪贴板，如有活动的输入框将自动填充；支持“置顶”和手动刷新配置。
 
 ## 快速使用
 
@@ -42,8 +42,6 @@ bin/Release/net9.0-windows/win-x64/publish/
   ]
 }
 ```
-
-- 可直接修改 `snippets.json`，在程序中点击“刷新”按钮即可重载。
 
 ## 常见问题
 
